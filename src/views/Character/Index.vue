@@ -14,14 +14,16 @@
 
         <h1 class="text-center text-4xl font-bold pb-10">All Chacarters</h1>
         <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-            <div class="card lg:w-52 md:w-48 sm:w-44 w-auto h-auto card-compact bg-gray-800 shadow-xl" v-for="(characters, index) in character" :key="index">
-                <figure>
-                    <img class="w-full h-full object-cover" :src="characters.thumbnail.path+'.'+characters.thumbnail.extension" alt="Character">
-                </figure>
-                <div class="card-body">
-                    <h2 class="card-title">{{characters.name}}</h2>
-                    <p class="line-clamp-1">{{characters.description}}</p>
-                </div>
+            <div class="card lg:w-52 md:w-48 sm:w-44 w-auto h-auto overflow-hidden card-compact bg-gray-800 shadow-xl" v-for="(characters, index) in character" :key="index">
+                <router-link :to="{name: 'detail.character',params: {id: characters.id}}">
+                    <figure>
+                        <img class="w-full h-full object-cover" :src="characters.thumbnail.path+'.'+characters.thumbnail.extension" alt="Character">
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">{{characters.name}}</h2>
+                        <p class="line-clamp-1">{{characters.description}}</p>
+                    </div>
+                </router-link>
             </div>
         </div>
 
