@@ -76,7 +76,7 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4">
         <div class="card lg:w-52 md:w-48 sm:w-44 w-auto h-auto card-compact bg-gray-800 shadow-xl" v-for="(seriess, index) in series" :key="index">
-          <router-link :to="{name: 'detail.comic',params: {id: seriess.id}}"> 
+          <router-link :to="{name: 'detail.series',params: {id: seriess.id}}"> 
             <figure>
               <img class="w-full h-full object-cover" :src="seriess.thumbnail.path+'.'+seriess.thumbnail.extension" alt="Character">
             </figure>
