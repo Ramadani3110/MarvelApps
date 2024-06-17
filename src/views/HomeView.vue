@@ -31,13 +31,15 @@
         <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4">
           <!-- Card -->
           <div class="card lg:w-52 md:w-48 sm:w-44 w-auto h-auto card-compact bg-gray-800 shadow-xl" v-for="(characters, index) in character" :key="index">
-            <figure>
-              <img class="w-full h-full object-cover" :src="characters.thumbnail.path+'.'+characters.thumbnail.extension" alt="Character">
-            </figure>
-            <div class="card-body">
-              <h2 class="card-title">{{characters.name}}</h2>
-              <p class="line-clamp-1">{{characters.description}}</p>
-            </div>
+            <router-link :to="{name: 'detail.character',params: {id: characters.id}}"> 
+              <figure>
+                <img class="w-full h-full object-cover" :src="characters.thumbnail.path+'.'+characters.thumbnail.extension" alt="Character">
+              </figure>
+              <div class="card-body">
+                <h2 class="card-title">{{characters.name}}</h2>
+                <p class="line-clamp-1">{{characters.description}}</p>
+              </div>
+            </router-link>
           </div>
         </div>
         <!-- Card -->
@@ -52,13 +54,15 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4">
         <div class="card lg:w-52 md:w-48 sm:w-44 w-auto h-auto card-compact bg-gray-800 shadow-xl" v-for="(comics, index) in comic" :key="index">
-          <figure>
-            <img class="w-full h-full object-cover" :src="comics.thumbnail.path+'.'+comics.thumbnail.extension" alt="Character">
-          </figure>
-          <div class="card-body">
-            <h2 class="card-title">{{comics.title}}</h2>
-            <p class="line-clamp-1">{{comics.description}}</p>
-          </div>
+          <router-link :to="{name: 'detail.comic',params: {id: comics.id}}"> 
+            <figure>
+              <img class="w-full h-full object-cover" :src="comics.thumbnail.path+'.'+comics.thumbnail.extension" alt="Character">
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">{{comics.title}}</h2>
+              <p class="line-clamp-1">{{comics.description}}</p>
+            </div>
+          </router-link>
         </div>
       </div>
     </div>
@@ -72,13 +76,15 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4">
         <div class="card lg:w-52 md:w-48 sm:w-44 w-auto h-auto card-compact bg-gray-800 shadow-xl" v-for="(seriess, index) in series" :key="index">
-          <figure>
-            <img class="w-full h-full object-cover" :src="seriess.thumbnail.path+'.'+seriess.thumbnail.extension" alt="Character">
-          </figure>
-          <div class="card-body">
-            <h2 class="card-title">{{seriess.title}}</h2>
-            <p>{{ seriess.startYear }} - {{ seriess.endYear }}</p>
-          </div>
+          <router-link :to="{name: 'detail.comic',params: {id: seriess.id}}"> 
+            <figure>
+              <img class="w-full h-full object-cover" :src="seriess.thumbnail.path+'.'+seriess.thumbnail.extension" alt="Character">
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">{{seriess.title}}</h2>
+              <p>{{ seriess.startYear }} - {{ seriess.endYear }}</p>
+            </div>
+          </router-link>
         </div>
       </div>
     </div>

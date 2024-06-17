@@ -41,7 +41,8 @@ export default{
         const id = route.params.id;
 
         onMounted(() => {
-            axios.get(`http://gateway.marvel.com/v1/public/characters/${id}?apikey=${process.env.VUE_APP_API_KEY}&ts=${process.env.VUE_APP_TS}&hash=${process.env.VUE_APP_HASH}`).then((result) => {
+            axios.get(`http://gateway.marvel.com/v1/public/characters/${id}?apikey=${process.env.VUE_APP_API_KEY}&ts=${process.env.VUE_APP_TS}&hash=${process.env.VUE_APP_HASH}`)
+            .then((result) => {
                 characterDet.value = result.data.data.results
             }).catch((err) => {
                 console.log(err);
