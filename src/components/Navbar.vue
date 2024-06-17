@@ -1,25 +1,25 @@
 <template>
-    <div class="navbar bg-transparent fixed z-50">
+    <div class="navbar bg-transparent fixed z-50 backdrop-blur-sm">
         <div class="navbar-start">
             <div class="dropdown">
             <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
             </div>
             <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                <li><router-link :to="{name: 'home'}">Home</router-link></li>
-                <li><router-link :to="{name: 'index.character'}">About</router-link></li>
-                <li><router-link :to="{name: 'index.comic'}" exactActiveClass="active-link">Comic</router-link></li>
-                <li><router-link :to="{name: 'index.series'}" exactActiveClass="active-link">Series</router-link></li>
+                <li><router-link :to="{name: 'home'}" exactActiveClass="active">Home</router-link></li>
+                <li><router-link :to="{name: 'index.character'}" exactActiveClass="active">About</router-link></li>
+                <li><router-link :to="{name: 'index.comic'}" exactActiveClass="active">Comic</router-link></li>
+                <li><router-link :to="{name: 'index.series'}" exactActiveClass="active">Series</router-link></li>
             </ul>
             </div>
-            <a class="ps-2 text-xl font-bold">MarvelsApp</a>
+            <a class="ps-2 text-xl font-bold hover:text-red-800">MarvelsApp</a>
         </div>
         <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal px-1">
-                <li><router-link :to="{name: 'home'}">Home</router-link></li>
-                <li><router-link :to="{name: 'index.character'}" exactActiveClass="active-link">Character</router-link></li>
-                <li><router-link :to="{name: 'index.comic'}" exactActiveClass="active-link">Comic</router-link></li>
-                <li><router-link :to="{name: 'index.series'}" exactActiveClass="active-link">Series</router-link></li>
+                <li><router-link :to="{name: 'home'}" exactActiveClass="active">Home</router-link></li>
+                <li><router-link :to="{name: 'index.character'}" exactActiveClass="active">Character</router-link></li>
+                <li><router-link :to="{name: 'index.comic'}" exactActiveClass="active">Comic</router-link></li>
+                <li><router-link :to="{name: 'index.series'}" exactActiveClass="active">Series</router-link></li>
             </ul>
         </div>
         <div class="navbar-end">
@@ -41,3 +41,21 @@
         </div>
     </div>
 </template>
+
+<style>
+.navbar .navbar-start .active,
+.navbar .navbar-center .active{
+    color: rgb(153 27 27) !important;
+    font-weight: bold;
+    background: none !important;
+}
+.navbar .navbar-center .active::after{
+    content: '';
+    position: absolute;
+    background-color: rgb(153 27 27) !important;
+    height: 2px;
+    width: 100%; /* change width to 100% to span the full width */
+    left: 0; /* adjust left position to 0 */
+    bottom: -2px;
+}
+</style>

@@ -6,6 +6,12 @@
 npm install
 ```
 
+## Copy the .env.example file to .env.development
+
+```
+cp .env.example .env.development
+```
+
 ### Compiles and hot-reloads for development
 
 ```

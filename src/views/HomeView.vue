@@ -36,7 +36,7 @@
             </figure>
             <div class="card-body">
               <h2 class="card-title">{{characters.name}}</h2>
-              <p>Click the button to watch on Jetflix app.</p>
+              <p class="line-clamp-1">{{characters.description}}</p>
             </div>
           </div>
         </div>
@@ -57,7 +57,7 @@
           </figure>
           <div class="card-body">
             <h2 class="card-title">{{comics.title}}</h2>
-            <p>Click the button to watch on Jetflix app.</p>
+            <p class="line-clamp-1">{{comics.description}}</p>
           </div>
         </div>
       </div>
