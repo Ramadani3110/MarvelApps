@@ -28,8 +28,27 @@
             </button>
             <dialog id="my_modal_1" class="modal">
                 <div class="modal-box">
-                    <h3 class="font-bold text-lg">About This Apps</h3>
-                    <p class="py-4">Press ESC key or click the button below to close</p>
+                    <h3 class="font-bold text-lg">About Me</h3>
+                    <div class="w-auto h-auto bg-gradient-to-r from-slate-900 to-slate-800 rounded-md">
+                        <div class="pt-5 text-center">
+                            <p class="font-bold">Politeknik Negeri Cilacap</p>
+                        </div>
+                        <div class="flex flex-row justify-between items-center pt-2 p-6 shadow-lg">
+                            <div class="flex flex-col">
+                                <p class="text-sm font-bold">NPM :</p>
+                                <p class="text-sm">230109050</p>
+                                <p class="text-sm font-bold">Name :</p>
+                                <p class="text-sm">Muhamad Ramadani</p>
+                                <p class="text-sm font-bold">Class :</p>
+                                <p class="text-sm">D4-Rekayasa Keamanan Siber</p>
+                            </div>
+                            <figure class="flex flex-col items-center gap-2">
+                                <img class="w-20 rounded-md" src="../assets/r.jpg" alt="orang">
+                                <p class="text-xs">2024</p>
+                            </figure>
+                        </div>
+
+                    </div>
                     <div class="modal-action">
                         <form method="dialog">
                             <!-- if there is a button in form, it will close the modal -->
