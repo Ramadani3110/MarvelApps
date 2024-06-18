@@ -30,7 +30,7 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4">
           <!-- Card -->
-          <div class="card lg:w-52 md:w-48 sm:w-44 w-auto h-auto card-compact bg-gray-800 shadow-xl" v-for="(characters, index) in character" :key="index">
+          <div class="card lg:w-52 md:w-48 sm:w-44 w-auto h-auto card-compact bg-gray-800 shadow-xl overflow-hidden" v-for="(characters, index) in character" :key="index">
             <router-link :to="{name: 'detail.character',params: {id: characters.id}}"> 
               <figure>
                 <img class="w-full h-full object-cover" :src="characters.thumbnail.path+'.'+characters.thumbnail.extension" alt="Character">
@@ -53,7 +53,7 @@
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-        <div class="card lg:w-52 md:w-48 sm:w-44 w-auto h-auto card-compact bg-gray-800 shadow-xl" v-for="(comics, index) in comic" :key="index">
+        <div class="card lg:w-52 md:w-48 sm:w-44 w-auto h-auto card-compact bg-gray-800 shadow-xl overflow-hidden" v-for="(comics, index) in comic" :key="index">
           <router-link :to="{name: 'detail.comic',params: {id: comics.id}}"> 
             <figure>
               <img class="w-full h-full object-cover" :src="comics.thumbnail.path+'.'+comics.thumbnail.extension" alt="Character">
@@ -75,7 +75,7 @@
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-        <div class="card lg:w-52 md:w-48 sm:w-44 w-auto h-auto card-compact bg-gray-800 shadow-xl" v-for="(seriess, index) in series" :key="index">
+        <div class="card lg:w-52 md:w-48 sm:w-44 w-auto h-auto card-compact bg-gray-800 shadow-xl overflow-hidden" v-for="(seriess, index) in series" :key="index">
           <router-link :to="{name: 'detail.series',params: {id: seriess.id}}"> 
             <figure>
               <img class="w-full h-full object-cover" :src="seriess.thumbnail.path+'.'+seriess.thumbnail.extension" alt="Character">
@@ -115,19 +115,22 @@ export default {
     const comic = ref([])
     const series = ref([])
     onMounted( () => {
-      axios.get(`http://gateway.marvel.com/v1/public/characters?apikey=${process.env.VUE_APP_API_KEY}&ts=${process.env.VUE_APP_TS}&hash=${process.env.VUE_APP_HASH}&limit=4`).then((result) => {
+      axios.get(`http://gateway.marvel.com/v1/public/characters?apikey=${process.env.VUE_APP_API_KEY}&ts=${process.env.VUE_APP_TS}&hash=${process.env.VUE_APP_HASH}&limit=5`)
+      .then((result) => {
         character.value = result.data.data.results
       }).catch((err) => {
         console.log(err);
       })
 
-      axios.get(`http://gateway.marvel.com/v1/public/comics?apikey=${process.env.VUE_APP_API_KEY}&ts=${process.env.VUE_APP_TS}&hash=${process.env.VUE_APP_HASH}&limit=4`).then((result) => {
+      axios.get(`http://gateway.marvel.com/v1/public/comics?apikey=${process.env.VUE_APP_API_KEY}&ts=${process.env.VUE_APP_TS}&hash=${process.env.VUE_APP_HASH}&limit=5`)
+      .then((result) => {
         comic.value = result.data.data.results
       }).catch((err) => {
         console.log(err);
       })
 
-      axios.get(`http://gateway.marvel.com/v1/public/series?apikey=${process.env.VUE_APP_API_KEY}&ts=${process.env.VUE_APP_TS}&hash=${process.env.VUE_APP_HASH}&limit=4`).then((result) => {
+      axios.get(`http://gateway.marvel.com/v1/public/series?apikey=${process.env.VUE_APP_API_KEY}&ts=${process.env.VUE_APP_TS}&hash=${process.env.VUE_APP_HASH}&limit=5`)
+      .then((result) => {
         series.value = result.data.data.results
       }).catch((err) => {
         console.log(err);
